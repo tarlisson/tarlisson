@@ -1,0 +1,556 @@
+/**
+*@author francisco tarlisson <franciscotarlisson@gmail.com>
+*
+*/
+@font-face{
+	font-family: Iconic_fill;
+	src: url("../_font/iconic_fill.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family: arial;
+	background-image: url("../_imagens/fundo_web2.jpg");
+	background-size: 100% 100%;
+	background-repeat: none;
+}
+
+p{	
+	text-indent: 5px;
+	text-align: justify;
+	line-height: 20px;
+}
+
+/**
+*
+*/
+#container{
+	width: 90%;
+	margin: 10px auto;
+	padding: 10px;
+	background-color: #FFF;	
+	border-radius: 20px;
+}
+
+#menu h1{	
+	display: inline;
+}
+
+#menu img{
+	width: 200px;
+	height: 100px;
+}
+
+#menu {
+	background-color:#F00;
+	background-image:linear-gradient(to bottom, rgba(0,0,0,.3), #F00);	
+	position: relative;
+}
+
+#menu ul{
+	margin: 0;
+	position: absolute;
+	right: 10px;
+	bottom: 0px;
+}
+
+#menu ul li{
+	display: inline-block;
+	padding: 5px;
+	position: relative;	
+}
+
+#menu ul li a{
+	text-decoration: none;
+	color: #000;
+	transition: 0.5s;
+}
+
+#menu li a:hover{
+	color: #FFF;
+	text-shadow: 1px 1px 1px #000;
+}
+
+#menu li ul {
+	display: none;
+	background-color:#F00;
+	background-image:linear-gradient(to bottom, rgba(0,0,0,.3), #F00);
+	border: 1px solid #000;
+	position: absolute;
+	bottom: -115px;
+	right: -8px;
+	width: 130px;
+	border-radius: 10px;
+	z-index: 2;
+}
+
+#menu li ul li{
+	display: block;
+}
+
+#menu li ul li:last-child{
+	border-top: 1px dashed #000;
+}
+
+#menu li ul::after {
+	display: inline-block;
+	content: " ";	
+	border-width: 6px;
+	border-style: solid;
+	border-color: transparent transparent #000 transparent;
+	position: absolute;
+	top: -12px;
+	right: 8px;
+}
+
+#menu li:hover > ul{
+	display: inline-block;
+}
+
+/**
+*
+*/
+/*slide de promoção*/
+#slide_promo {	
+	/*background-color: rgba(0,0,0,0.8);	*/
+	position: relative;
+	margin: 20px 0;
+	background-image: url("../_imagens/fundo.jpg");
+	background-size: 100%;
+	background-repeat: none;	
+	background-color: rgba(0,0,0,0.5);
+	border-top-right-radius: 900px 500px;
+	border-bottom-right-radius: 900px 500px;
+	border-top-left-radius: 900px 500px;
+	border-bottom-left-radius: 900px 500px;
+}
+
+#slide {
+	position: relative;
+	top: -10px;
+	display: block;	
+	margin: 0px auto;	
+	overflow: hidden;	
+}
+
+#slide figure img {
+	width: 600px;
+	height: 500px;
+}
+
+#slide figure figcaption{
+	color: white;
+	text-shadow: 0px 0px 1px #000;
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	bottom: 10px;
+	padding: 10px;
+}
+
+/**
+*
+*/
+/*descrição da loja*/
+#detalhes_loja{
+	margin: 60px 0;
+}
+
+#img_desc_loja{	
+	display: inline-block;
+	margin: 0 10px;
+}
+
+#img_desc_loja img{
+	width: 350px;
+	height: 250px;
+	margin: 0 10px;
+	border: 1px dashed #000;
+	padding: 4px;
+}
+
+#desc_loja {
+	width: 500px;
+	margin: 10px auto;
+	margin-top: 90px;
+}
+
+#desc_loja h2{
+	text-align: center;
+	font-size: 12pt;
+}
+
+/**
+*
+*/
+/*lista de produtos me destaques*/
+#lista_destaq ul{
+	display: block;
+	margin: 0 auto;
+	padding: 0 2%;
+	width: 82%;	
+}
+
+#lista_destaq ul li{
+	list-style: none;
+	display: inline-block;
+	width: 230px;
+	height: 250px;
+	padding: 5px;
+	margin: 5px 3px;	
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.7);
+}
+
+#lista_destaq ul li img{
+	width: 150px;
+	height: 120px;
+	display: block;
+	margin: 0 auto;
+	border-bottom: 1px dashed #000;
+}
+
+#lista_destaq ul li p{
+	text-align: center;
+}
+
+#lista_destaq ul li a{
+	display: inline-block;
+	width: 120px;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px 2px #000;
+	background-color: Red;	
+	padding: 2px;
+	margin-top: 4px;
+}
+
+#lista_destaq ul li input{
+	width: 30px;
+	margin-right: 10px;
+}
+
+#lista_destaq li a input{
+	background-color: transparent;
+	border: none;
+	width: 120px;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px 2px #000;
+}
+
+/**
+*
+*/
+#lista_prod {
+	width: 75%;
+	float: right;
+}
+
+#lista_prod ul{
+	display: block;
+	margin: 0 auto;
+	padding: 0 2%;
+	width: 82%;	
+}
+
+#lista_prod ul li{
+	list-style: none;
+	display: inline-block;
+	width: 230px;
+	height: 250px;
+	padding: 5px;
+	margin: 5px 3px;	
+	box-shadow: 0px 0px 3px rgba(0,0,0,0.7);
+}
+
+#lista_prod ul li img{
+	width: 150px;
+	height: 120px;;
+	display: block;
+	margin: 0 auto;
+	border-bottom: 1px dashed #000;
+}
+
+#lista_prod ul li p{
+	text-align: center;
+}
+
+#lista_prod ul li a{
+	display: inline-block;
+	width: 120px;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px 2px #000;
+	background-color: Red;	
+	padding: 2px;
+	margin-top: 4px;
+}
+
+#lista_prod ul li input{
+	width: 30px;
+	margin-right: 10px;
+}
+
+#lista_prod li a input{
+	background-color: transparent;
+	border: none;
+	width: 120px;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px 2px #000;
+}
+
+/**
+*
+*/
+#categorias{
+	width: 20%;
+	float: left;
+	padding: 10px;	
+}
+
+#categorias ul{
+	margin: 0;
+}
+
+#categorias li{
+	list-style: none;
+	border: 1px dashed #000;
+	text-align: center;	
+	margin: 2px 20px 2px 0;
+	padding: 2px;	
+}
+
+#categorias li a{
+	color: #000;
+	text-decoration: none;
+	transition: 0.2s;
+}
+
+#categorias li a:hover{
+	color: #F00;
+	text-shadow: 1px 1px 1px #000;
+}
+
+/**
+*
+*/
+/*rodape*/
+
+#rodape {
+	background-color: rgba(0,0,0,0.7);
+	color: white;
+	text-shadow: 0px 0px 2px #000;
+	padding: 10px;
+	margin-top: 20px;	
+}
+
+#rodape{
+	display: block;		
+}
+
+#rodape img{
+	float: left;
+	width: 200px;
+}
+
+#rodape ul {
+	float: left;
+	display: inline-block;	
+	margin: 10px 10px;
+}
+
+#rodape ul li{
+	list-style: none;	
+}
+
+#rodape ul li:first-child{
+	border-bottom: 1px solid #FFA500;
+	margin-bottom: 5px;
+}
+
+/**
+*
+*/
+.iconeFooter::before{
+	font-family: Iconic_fill;	
+	font-size: 18pt;
+	display: inline;	
+	margin-right: 5px;
+}
+
+.endereco::before {	
+	color: #FF0000;	
+	content: "\e068";	
+}
+
+.contato::before{	
+	color: #000;	
+	content: "\e05e";	
+}
+
+.duvida::before{	
+	color: #000;	
+	content: "\003f";	
+}
+
+/**
+*
+*/
+/*modal*/
+#fundo_login {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.6);
+	z-index: 5;
+}
+
+#janela_login {
+	display: none;
+	position: fixed;
+	top: 35%;
+	left: 40%;
+	width: 280px;
+	margin: 0 auto;
+	background-color: #FFF;
+	border-radius: 10px;
+	padding: 10px;
+	z-index: 7;
+}
+
+#janela_login fieldset{
+	padding: 10px;
+	padding-bottom: 40px;
+	position: relative;
+}
+
+#janela_login a{	
+	display: block;
+	text-align: center;
+	margin-top: 5px;
+}
+
+/**
+*
+*/
+.clear-fix::before, .clear-fix::after{
+	display: block;
+	content: " ";
+}
+
+.clear-fix::after{
+	clear: both;
+}
+
+/**
+*
+*/
+.cabecalho{
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+	margin: 10px;
+	padding: 2px;	
+	background-color: #F00;
+	color: #FFF;
+	text-shadow: 1px 1px 1px #000;
+	text-align: center;
+}
+
+.cabecalho h1{
+	font-size: 16pt;
+}
+
+.cabecalho h3{
+	font-size: 14pt;
+	margin-bottom: 0px;
+}
+
+/**
+*
+*/
+.btnLogar{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+/**
+*
+*/
+.btnFechar_modal::after{
+	font-family: Iconic_fill;
+	content: "\2718";
+	color: #000;
+	font-size: 20pt;
+}
+
+.btnFechar_modal {
+	position: absolute;
+	right: -3px;
+	top: -5px;
+}
+
+/**
+*
+*/
+.caixa_aviso {	
+	padding: 10px;
+	border: 1px solid #000;
+	background-color: #DCDCDC;
+}
+
+.caixa_aviso{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -50px;
+	margin-left: -120px;
+	z-index: 10;
+}
+
+.caixa_aviso p{
+	font-size: 12pt;
+	text-align: center;
+}
+
+.botao {	
+	background-color: #FF0000;		
+	text-decoration: none;
+	text-align: center;
+	color: #FFF;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+	background-color: #FF0000;
+	padding: 5px;
+	border: 1px solid #000;
+}
+
+.logado::after {
+	font-family: Iconic_fill;
+	font-size: 14pt;
+	display: inline;
+	margin-left: 5px;
+	content: "\e062";
+}
+
+.erro {
+	color: #FF0000;
+}
+
+.pag_atual{
+	color: blue;
+}
+
+.busca::before {
+	font-family: Iconic_fill;
+	display: inline;
+	font-size: 14pt;
+	content: "\e074";
+	margin-left: 5px;
+}

@@ -1,0 +1,3 @@
+Para configurar o acesso ao banco de dados abra o arquivo localizado _classes/config.php, nele esta a configuração para acesso ao banco, analise e mude as informações.
+
+Esta aplicação web foi projetada com intuito de apresentar habilidades e conhecimentos técnicos. De forma a enteder que o projeto estara de forma simples e objetivo. As informação levantada nesta aplicação deve levar a entender que são fantasiosas, apenas para projeção de habilidades.

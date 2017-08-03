@@ -1,0 +1,33 @@
+/**
+*@author francisco tarlisson <franciscotarlisson@gmail.com>
+*
+*/
+
+#form_cadastro {
+	width: 550px;
+	margin: 30px auto;
+	padding: 10px;
+	background-color: #E0FFFF;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+}
+
+#form_cadastro label{
+	display: inline-block;
+}
+
+#form_cadastro fieldset{
+	padding: 10px;
+}
+
+#form_cadastro fieldset input{
+	display: block;	
+}
+
+#form_cadastro a{
+	text-decoration: none;
+}
+
+.alinhado_direita{
+	float: right;
+}

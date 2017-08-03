@@ -1,0 +1,85 @@
+#tabela_produto{
+	position: relative;
+	margin-bottom: 300px;
+	padding: 10px;
+}
+
+#tabela_produto table{
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	background-color: #DCDCDC;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+	margin: 0 auto;
+}
+
+#tabela_produto table th, td {
+	border: 1px dashed #000;
+	padding: 10px;
+	text-align: center;
+}
+
+#preco_tot {
+	width: 400px;
+	padding: 5px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	background-color: #DCDCDC;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+	margin: 10px auto;
+}
+
+#preco_tot a,p {
+	display: inline-block;
+}
+
+#preco_tot a {
+	margin-left: 50px;	
+}
+
+#finalizar_comp {
+	display: none;
+	position: fixed;
+	top: 30%;
+	left: 40%;
+	width: 300px;
+	padding: 10px;
+	border: 1px solid #000;
+	border-radius: 10px;
+	background-color: #DCDCDC;
+	box-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+	margin: 0 auto;
+	z-index: 20;
+}
+
+#finalizar_comp a{
+	display: inline-block;	
+	width: 30px;
+	margin: 0 auto;
+}
+
+#finalizar_comp h1{
+	text-align: center;
+}
+
+#fundo{
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 19;
+}
+
+.aviso h1{
+	text-align: center;
+	font-size: 16pt;
+	background-color: #DCDCDC;
+	padding: 20px;
+	color: #FF0000;
+	text-shadow: 1px 1px 2px #000;
+}
+
+.aviso p{
+	text-align: center;
+	font-size: 11pt;
+}
