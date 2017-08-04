@@ -5,6 +5,8 @@
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="../_css/bombomvida.css" />
 	<link rel="stylesheet" type="text/css" href="../_css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="../_css/gallery.prefixed.css"/>
+	<link rel="stylesheet" type="text/css" href="../_css/gallery.theme.css"/>
 	<script src="../_js/jquery-3.2.1.js"></script>
 	<script src="../_js/jquery.cycle.all.js"></script>
 	<script src="../_js/bombomvida.js"></script>
@@ -35,25 +37,31 @@
 			<?php endif; ?>
 		</ul>
 	</nav>
-<div id="container">
+
 	<main>
 		<!--slide-->
-		<section id="slide_promo">
+		<div class="gallery autoplay items-2">
+			 <div id="item-1" class="control-operator"></div>
+			 <div id="item-2" class="control-operator"></div>			 
 
-			<!--slide-->
-			<div id="slide">
-				<!--imagens do slide-->
-				<figure class="slide_img">
-		    		<img src="../_imagens/nestle_promo.jpg"/>
-		    		<figcaption>PROMOÇÃO NESTLE! no valor de R$4,99. Visite a loja ou compre no site.</figcaption>
-			    </figure>
-				<figure class="slide_img">
-					<img src="../_imagens/barras_lacta.jpg"/>
-					<figcaption>Barras Lacta por APENAS R$4,99.</figcaption>
-				</figure>			
-			</div>		
-		</section>
+			 <figure class="item">
+			   <img src="../_imagens/nestle_promo.jpg" alt="caixa de bombom nestle, promoção R$4.99." />
+				   <figcaption class="legenda">PROMOÇÃO NESTLE! no valor de R$4,99. Visite a loja ou compre no site.</figcaption>
+			 </figure>
+
+			 <figure class="item">
+			   <img src="../_imagens/barras_lacta.jpg" alt="barras lacta em promoção R$4.99." />
+					<figcaption class="legenda">Barras Lacta por APENAS R$4,99.</figcaption>
+			 </figure>			 
+
+			 <div class="controls">
+			   <a href="#item-1" class="control-button">•</a>
+			   <a href="#item-2" class="control-button">•</a>
+			 </div>
+		</div>
 	</main>
+	
+<div id="container">
 
 	<section>
 		<article id="detalhes_loja" class="clear-fix">
@@ -79,14 +87,31 @@
 			</div>
 		</article>
 
-		<article id="lista_destaq">
+		<article id="lista_prod">
 			<header class="cabecalho">
 				<h1>Produtos em destaque!</h1>
 			</header>
 		
 			<!--lista de produtos em destaques-->
 			<?php if(count($produto->get_produtos()) > 0) : ?>
-				<?php include "_template/elementos/lista_produtos_destaque.php"; ?>
+				<ul>
+					<?php foreach ($produto->get_produtos() as $produto) : ?>
+						<li>
+							<img src="<?php echo $produto['img']; ?>"/>
+							<p><?php echo $produto['nome']; ?>, <?php echo $produto['peso']; ?>g</p>
+							<p>preço: R$<?php echo $produto['valor']; ?></p>
+						<?php if($cliente->get_id() > 0) : ?>
+							<form method="POST">
+								<input type="text" name="id" value="<?php echo $produto['id']; ?>" style="display: none;"/>
+								<input type="text" name="nome" value="<?php echo $produto['nome']; ?>" style="display: none;"/>
+								<input type="text" name="peso" value="<?php echo $produto['peso']; ?>" style="display: none;">
+								<input type="text" name="valor" value="<?php echo $produto['valor']; ?>" style="display: none;"/>
+								<input type="number" min="1" name="quantidade" value="1"/><a href="#"><input type="submit" name="carrinho" value="+ Carrinho" /></a>
+							</form>
+						</li>
+						<?php endif; ?>
+					<?php endforeach; ?>
+				</ul>
 			<?php else : ?>
 				<h3 class="notificacao">Não há produtos em destaque!</h3>
 			<?php endif; ?>
@@ -111,8 +136,7 @@
 				</label>			
 				<input class="btnLogar" type="submit" name="" value="Entrar"/>
 			</fieldset>			
-			<a href="cadastro.php">Não sou cadastrado</a>
-			<a href="#">Esqueci minha senha</a>
+			<a href="cadastro.php">Não sou cadastrado</a>			
 			<!--botão de fechar-->
 			<div class="btnFechar_modal"></div>
 		</form>

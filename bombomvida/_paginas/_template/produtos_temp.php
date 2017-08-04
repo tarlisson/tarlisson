@@ -33,7 +33,7 @@
 </nav>
 
 <div class="clear-fix" id="container">
-	<section id="lista_prod">
+	<section id="lista_prod" class="lista_flutuante">
 		<header class="cabecalho"><h1>Produtos</h1></header>
 		<form method="POST">
 			<label class="busca">
@@ -55,19 +55,25 @@
 						<input type="text" name="nome" value="<?php echo $produto['nome']; ?>" style="display: none;"/>
 						<input type="text" name="peso" value="<?php echo $produto['peso']; ?>" style="display: none;">
 						<input type="text" name="valor" value="<?php echo $produto['valor']; ?>" style="display: none;"/>
-						<input type="number" name="quantidade" value="1"/><a href=""><input type="submit" name="carrinho" value="+ Carrinho" /></a>
+						<input type="number" min="1" name="quantidade" value="1"/><a href=""><input type="submit" name="carrinho" value="+ Carrinho" /></a>
 					</form>
 				</li>			
 				<?php endif; ?>
 			<?php endforeach; ?>
 			</ul>
 		<?php else : ?>	
-			<p class="erro">nada foi encontrado em <?php foreach ($categorias as $linha){ if($_GET['id_categ'] == $linha['id']){ echo $linha['nome']; break; }} ?>, com o nome de <?php echo $_POST['nome_prod']; ?>.
+			<p class="erro empurrar_footer">nada foi encontrado 
+				<?php foreach ($categorias as $linha) : ?>
+					<?php if(isset($_GET['id_categ']) && $_GET['id_categ'] == $linha['id']) : ?>
+						<?php echo "em " . $linha['nome']; break; ?>					
+					<?php endif; ?>
+				<?php endforeach; ?>
+			 com o nome de <?php echo $_POST['nome_prod']; ?>.</p>
 		<?php endif; ?>
 	</section>
 
 	<aside id="categorias">
-		<h3 class="cabecalho">Categorias</h3>
+		<h3 class="cabecalho">Categoria</h3>
 		<?php if(isset($categorias) && count($categorias) > 0) : ?>
 			<ul>
 				<?php foreach ($categorias as $categoria) : ?>
@@ -94,8 +100,7 @@
 				</label>
 				<input class="btnLogar" type="submit" name="" value="Entrar"/>
 			</fieldset>	
-			<a href="cadastro.php">Não sou cadastrado</a>
-			<a href="">Esqueci minha senha</a>
+			<a href="cadastro.php">Não sou cadastrado</a>			
 			<!--botão de fechar-->
 			<div class="btnFechar_modal"></div>
 		</form>
